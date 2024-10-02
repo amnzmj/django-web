@@ -1,2 +1,2 @@
-# django-web
-trabajo django gitignore venv
+## django-web
+gitignore venv
