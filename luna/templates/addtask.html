@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Tasks</h1>
+
+{{error}}
+
+<form action="/tasks/addtask/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button>Registrar</button>
+
+</form>
+{% endblock %}
