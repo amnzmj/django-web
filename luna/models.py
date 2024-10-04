@@ -9,6 +9,8 @@ class Task(models.Model):
     dateCompleted = models.DateTimeField(null=True, verbose_name='Fecha terminado')
     important = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)#borrar todos los dattos relacionados
+    pais = models.CharField(null=True, max_length=100,verbose_name='país')
+    estado = models.CharField(null=True, max_length=100,verbose_name='estado')
     def __str__(self):
         return self.title + ' by ' + self.user.username
   
