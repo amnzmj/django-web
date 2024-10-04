@@ -72,6 +72,12 @@ def signup(request):
                             'form': UserCreationForm,
                             'error':'Usuario ya existe'
                        })
+             else: 
+                  return render (request, 'signin.html', {
+                 'form': AuthenticationForm,
+                 'error': 'Usuario o contraseña incorrectos'
+             }) 
+                  
 def signin (request):
     if request.method == 'GET':
         return render(request, 'signin.html', {
