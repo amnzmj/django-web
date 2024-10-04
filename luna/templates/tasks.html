@@ -13,9 +13,19 @@
     <ul>
 
         {% for task in tasks %}
-            <p>{{task.title}}</p>
-            <p>{{task.description}}</p>
-            <p>{{task.username}}</p>
+
+        <h3>task</h3>
+        <ul>
+            <li>{{task.title}}</li>
+        </ul>
+        <h3>descripción</h3>
+        <ul>
+            <li>{{task.description}}</li>
+        </ul>
+        <br>
+
+            
+
         {% endfor %}
             
 

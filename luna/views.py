@@ -15,6 +15,7 @@ def home(request):
     return render(request,'inicio.html', {
         'fechaActual': fechaActual #que traiga la fecha actual a la página
     })
+
 def tasks(request):
 
     tasks = Task.objects.all()
@@ -73,8 +74,8 @@ def signup(request):
                             'error':'Usuario ya existe'
                        })
              else: 
-                  return render (request, 'signin.html', {
-                 'form': AuthenticationForm,
+                  return render (request, 'signup.html', {
+                 'form': UserCreationForm,
                  'error': 'Usuario o contraseña incorrectos'
              }) 
                   
