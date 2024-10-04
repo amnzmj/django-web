@@ -102,39 +102,3 @@ def signout(request):
     return redirect ('home')
         
  
-#         user = User.objects.create_user(
-#              username = request.post['username'], 
-#              password = request.post ['password']
-#         ) #funcion para crear usuarios
-#         user.save()
-#         return redirect('tasks')
-
-#         return render(request,'signup.html', {
-#            'form': UserCreationForm
-#        })
-# #-------------------------------------------------------------------------------------------------
-        
-# def signin (request):
-#     if request.method == 'GET':
-#         return render(request, 'signin.html', {
-#             'form': AuthenticationForm
-#         })
-#     else:
-
-#         User=authenticate( request, username = request.POST ['username'], password = request.POST ['password'])
-#         if User is None:
-#             return render (request, 'signin.html', {
-#                 'form': AuthenticationForm,
-#                 'error': 'Usuario o contraseña incorrectos'
-#             }) 
-#         else: 
-#              login(request, User)
-#              return redirect ('tasks')
-
-
-            
-
- 
-
-
-# Create your views here.

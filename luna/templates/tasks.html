@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %} 
-    tasks
+    Tasks
 {% endblock %}
 
 {% block head %}  
@@ -9,27 +9,29 @@
 {% endblock %} 
 
 {%block content %}
-    <h1>tasks</h1>
+    <h1>Todas las tasks</h1>
+    <hr>
     <ul>
 
         {% for task in tasks %}
 
-        <h3>task</h3>
+        <h3>Task:</h3>
         <ul>
             <li>{{task.title}}</li>
         </ul>
-        <h3>descripción</h3>
+        <h3>Descripción:</h3>
         <ul>
             <li>{{task.description}}</li>
         </ul>
-        <h3>país</h3>
+        <h3>País:</h3>
         <ul>
             <li>{{task.pais}}</li>
         </ul>
-        <h3>estado</h3>
+        <h3>Estado:</h3>
         <ul>
             <li>{{task.estado}}</li>
         </ul>
+        <hr>
         <br>
 
             
