@@ -1,6 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class pais(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+
+class estado(models.Model):
+    nombre = models.CharField(max_length=100)
+    pais =models.ForeignKey(pais, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
+
 class Task(models.Model):
     
     title = models.CharField(max_length=100, verbose_name='título')
@@ -9,8 +22,8 @@ class Task(models.Model):
     dateCompleted = models.DateTimeField(null=True, verbose_name='Fecha terminado')
     important = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)#borrar todos los dattos relacionados
-    pais = models.CharField(null=True, max_length=100,verbose_name='país')
-    estado = models.CharField(null=True, max_length=100,verbose_name='estado')
+    pais = models.ForeignKey(pais, on_delete=models.SET_NULL, null=True)
+    estado = models.ForeignKey(estado, on_delete=models.SET_NULL, null=True)
     def __str__(self):
         return self.title + ' by ' + self.user.username
   
